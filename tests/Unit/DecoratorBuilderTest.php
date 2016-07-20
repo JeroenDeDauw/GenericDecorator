@@ -7,6 +7,7 @@ namespace GenericDecorator\Tests;
 use GenericDecorator\DecoratorBuilder;
 use GenericDecorator\Tests\TestDoubles\ServiceClass;
 use GenericDecorator\Tests\TestDoubles\ServiceImplementingPartialInterface;
+use GenericDecorator\Tests\TestDoubles\ThrowingService;
 
 /**
  * @covers GenericDecorator\DecoratorBuilder
@@ -153,5 +154,18 @@ class DecoratorBuilderTest extends \PHPUnit_Framework_TestCase {
 //			$coreService->recordCalls
 //		);
 //	}
+
+	public function testExceptionsAreNotCaughtByDefault() {
+		$coreService = new ThrowingService();
+
+		/**
+		 * @var ServiceClass $decoratedService
+		 */
+		$decoratedService = DecoratorBuilder::newBuilder( $coreService )->newDecorator();
+
+		$this->expectException( \RuntimeException::class );
+		$this->expectExceptionMessage( ThrowingService::ERROR_MESSAGE );
+		$decoratedService->getFixedValue();
+	}
 
 }
