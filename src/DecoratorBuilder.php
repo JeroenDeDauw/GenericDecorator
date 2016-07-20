@@ -34,6 +34,9 @@ class DecoratorBuilder {
 		return $this;
 	}
 
+	/**
+	 * @return object
+	 */
 	public function newDecorator() {
 		$methodNames = $this->getMethodNames();
 		$decorator = $this->newMock( $this->getDecoratedType(), $methodNames );
