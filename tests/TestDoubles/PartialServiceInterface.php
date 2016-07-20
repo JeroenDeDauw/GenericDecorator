@@ -2,7 +2,7 @@
 
 declare( strict_types = 1 );
 
-namespace GenericDecorator\Tests\TestServices;
+namespace GenericDecorator\Tests\TestDoubles;
 
 /**
  * @licence GNU GPL v2+

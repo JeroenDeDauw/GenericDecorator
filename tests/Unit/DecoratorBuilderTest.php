@@ -5,14 +5,16 @@ declare( strict_types = 1 );
 namespace GenericDecorator\Tests;
 
 use GenericDecorator\DecoratorBuilder;
-use GenericDecorator\Tests\TestServices\ServiceClass;
-use GenericDecorator\Tests\TestServices\ServiceImplementingPartialInterface;
+use GenericDecorator\Tests\TestDoubles\ServiceClass;
+use GenericDecorator\Tests\TestDoubles\ServiceImplementingPartialInterface;
 
 /**
+ * @covers GenericDecorator\DecoratorBuilder
+ *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class BeforeAfterDecoratorTest extends \PHPUnit_Framework_TestCase {
+class DecoratorBuilderTest extends \PHPUnit_Framework_TestCase {
 
 	public function testGivenNoSpecification_newDecoratorReturnsCorrectType() {
 		$coreService = new ServiceClass();
