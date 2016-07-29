@@ -21,6 +21,11 @@
 			"GenericDecorator\\Tests\\": "tests/"
 		}
 	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.1.0-dev"
+		}
+	},
 	"scripts": {
 		"ci": [
 			"@test",
