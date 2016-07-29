@@ -133,28 +133,6 @@ class DecoratorBuilderTest extends \PHPUnit_Framework_TestCase {
 		$this->assertSame( [ [] ], $beforeCalls );
 	}
 
-//	public function testCanDecorateDecorator() {
-//		$coreService = new ServiceClass();
-//
-//		/**
-//		 * @var ServiceClass $decoratedService
-//		 */
-//		$decoratedService = DecoratorBuilder::newBuilder( $coreService )->newDecorator();
-//
-//		/**
-//		 * @var ServiceClass $decoratedDecorator
-//		 */
-//		$decoratedDecorator = DecoratorBuilder::newBuilder( $decoratedService )->newDecorator();
-//
-//		$decoratedDecorator->record( 'pink fluffy unicorns' );
-//		$decoratedDecorator->record( 'dancing on rainbows' );
-//
-//		$this->assertSame(
-//			[ 'pink fluffy unicorns', 'dancing on rainbows' ],
-//			$coreService->recordCalls
-//		);
-//	}
-
 	public function testExceptionsAreNotCaughtByDefault() {
 		$coreService = new ThrowingService();
 

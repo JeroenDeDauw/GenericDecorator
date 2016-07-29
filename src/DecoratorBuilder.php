@@ -69,13 +69,6 @@ class DecoratorBuilder {
 			}
 		);
 
-//		if ( $this->objectToDecorate instanceof \PHPUnit_Framework_MockObject_MockObject ) {
-//			$methodNames = array_diff(
-//				$methodNames,
-//				get_class_methods( \PHPUnit_Framework_MockObject_MockObject::class )
-//			);
-//		}
-
 		return $methodNames;
 	}
 
