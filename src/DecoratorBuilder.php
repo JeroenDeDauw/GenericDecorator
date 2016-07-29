@@ -4,6 +4,8 @@ declare( strict_types = 1 );
 
 namespace GenericDecorator;
 
+use PHPUnit_Framework_MockObject_Generator;
+
 /**
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
@@ -51,15 +53,8 @@ class DecoratorBuilder {
 	}
 
 	private function newMock( string $type, array $methods ): \PHPUnit_Framework_MockObject_MockObject {
-		$mockBuilder = new \PHPUnit_Framework_MockObject_MockBuilder(
-			new class() extends \PHPUnit_Framework_TestCase {},
-			$type
-		);
-
-		$mockBuilder->disableOriginalConstructor();
-		$mockBuilder->setMethods( $methods );
-
-		return $mockBuilder->getMock();
+		$generator = new PHPUnit_Framework_MockObject_Generator();
+		return $generator->getMock( $type, $methods );
 	}
 
 	private function getDecoratedType(): string {
