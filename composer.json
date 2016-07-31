@@ -1,6 +1,6 @@
 {
 	"name": "jeroen/generic-decorator",
-	"description": "",
+	"description": "Builder for generic and type safe decorators",
 	"homepage": "https://github.com/JeroenDeDauw/GenericDecorator",
 	"license": "GPL-2.0+",
 	"require": {
@@ -39,7 +39,7 @@
 			"@phpcs"
 		],
 		"phpcs": [
-			"vendor/bin/phpcs src/* tests/* --standard=phpcs.xml --extensions=php -sp"
+			"vendor/bin/phpcs src/ tests/ --standard=phpcs.xml --extensions=php -sp"
 		]
 	}
 }
