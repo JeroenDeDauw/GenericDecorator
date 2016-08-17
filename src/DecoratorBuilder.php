@@ -54,7 +54,8 @@ class DecoratorBuilder {
 
 	private function newMock( string $type, array $methods ): \PHPUnit_Framework_MockObject_MockObject {
 		$generator = new PHPUnit_Framework_MockObject_Generator();
-		return $generator->getMock( $type, $methods );
+
+		return $generator->getMock( $type, $methods, [], '', false );
 	}
 
 	private function getDecoratedType(): string {

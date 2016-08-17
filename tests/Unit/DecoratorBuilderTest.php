@@ -7,6 +7,7 @@ namespace GenericDecorator\Tests;
 use GenericDecorator\DecoratorBuilder;
 use GenericDecorator\Tests\TestDoubles\ServiceClass;
 use GenericDecorator\Tests\TestDoubles\ServiceImplementingPartialInterface;
+use GenericDecorator\Tests\TestDoubles\ServiceWithConstructorParams;
 use GenericDecorator\Tests\TestDoubles\ThrowingService;
 
 /**
@@ -137,13 +138,24 @@ class DecoratorBuilderTest extends \PHPUnit_Framework_TestCase {
 		$coreService = new ThrowingService();
 
 		/**
-		 * @var ServiceClass $decoratedService
+		 * @var ThrowingService $decoratedService
 		 */
 		$decoratedService = DecoratorBuilder::newBuilder( $coreService )->newDecorator();
 
 		$this->expectException( \RuntimeException::class );
 		$this->expectExceptionMessage( ThrowingService::ERROR_MESSAGE );
 		$decoratedService->getFixedValue();
+	}
+
+	public function testCanDecorateObjectWithRequiredConstructorParameters() {
+		$coreService = new ServiceWithConstructorParams( 'MJAU' );
+
+		/**
+		 * @var ServiceWithConstructorParams $decoratedService
+		 */
+		$decoratedService = DecoratorBuilder::newBuilder( $coreService )->newDecorator();
+
+		$this->assertSame( 'MJAU', $decoratedService->getSomeString() );
 	}
 
 }
