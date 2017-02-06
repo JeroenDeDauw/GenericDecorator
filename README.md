@@ -56,6 +56,10 @@ arguments the decorated method receives.
 
 ## Release notes
 
+### 0.1.2 (2017-02-06)
+
+* Made installable with PHPUnit Mock Objects 4.x
+
 ### 0.1.1 (2016-08-16)
 
 * Decorating classes with required constructor parameters now works
