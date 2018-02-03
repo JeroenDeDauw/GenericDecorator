@@ -2,7 +2,7 @@
 	"name": "jeroen/generic-decorator",
 	"description": "Builder for generic and type safe decorators",
 	"homepage": "https://github.com/JeroenDeDauw/GenericDecorator",
-	"license": "GPL-2.0+",
+	"license": "GPL-2.0-or-later",
 	"require": {
 		"php": ">=7.0",
 		"phpunit/phpunit-mock-objects": "~3.2 || ~4.0"
